@@ -47,11 +47,11 @@ class StartPage extends StatelessWidget {
                     color: Colors.white54,
                   ),
                 ),
-                SizedBox(height: 30),
+                const SizedBox(height: 30),
                 // Get Started
                 ElevatedButton(
                   onPressed: () {
-                    Navigator.push(context, MaterialPageRoute(builder: ((context) => const HomePage())));
+                    Navigator.push(context, MaterialPageRoute(builder: ((context) => HomePage())));
                   },
                   child: Text("Get Started"),
                   style: ElevatedButton.styleFrom(

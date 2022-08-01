@@ -1,3 +1,4 @@
+import 'package:dropbox_app/screens/home_page.dart';
 import 'package:dropbox_app/screens/start_page.dart';
 import 'package:flutter/material.dart';
 
@@ -8,7 +9,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      home: StartPage(),
+      home: HomePage(),
     );
   }
 }
