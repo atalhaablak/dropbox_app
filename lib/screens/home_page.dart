@@ -1,13 +1,21 @@
 import 'package:dropbox_app/products/quick_accsess_listview.dart';
+import 'package:dropbox_app/screens/temporary/temporary_screens.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:pie_chart/pie_chart.dart';
-
 import '../products/category_listview.dart';
-import '../products/widgets/custom_clasour.dart';
 
-class HomePage extends StatelessWidget {
+class HomePage extends StatefulWidget {
   HomePage({Key? key}) : super(key: key);
+
+  @override
+  State<HomePage> createState() => _HomePageState();
+}
+
+class _HomePageState extends State<HomePage> {
+  int selectedIndex = 0;
+
+  List pages = [HomePage(), FilePage(), StarPage(), ProfilePage()];
 
   @override
   Widget build(BuildContext context) {
@@ -15,25 +23,57 @@ class HomePage extends StatelessWidget {
       backgroundColor: Color.fromARGB(255, 247, 239, 239),
       body: SafeArea(
         child: Padding(
-          padding: const EdgeInsets.all(20),
-          child: Column(
-            children: [
-              const _HomePageAppBar(name: "Ahmet Talha Ablak"),
-              SizedBox(height: 40),
-              _AvaibleSpace(context),
-              SizedBox(height: 20),
-              InterHeadButton(text: "Category", onPressed: () {}),
-              SizedBox(height: 10),
-              _categoryList(context),
-              InterHeadButton(text: "Quick Accsess", onPressed: () {}),
-              Padding(
-                padding: const EdgeInsets.all(8.0),
-                child: _quickAccsessList(context),
-              ),
-            ],
+          padding: const EdgeInsets.symmetric(horizontal: 20),
+          child: SingleChildScrollView(
+            physics: NeverScrollableScrollPhysics(),
+            child: Column(
+              children: [
+                const _HomePageAppBar(name: "Ahmet Talha Ablak"),
+                SizedBox(height: 40),
+                _AvaibleSpace(context),
+                SizedBox(height: 30),
+                InterHeadButton(text: "Category", onPressed: () {}),
+                SizedBox(height: 10),
+                _categoryList(context),
+                InterHeadButton(text: "Quick Accsess", onPressed: () {}),
+                Padding(
+                  padding: const EdgeInsets.symmetric(horizontal: 8.0),
+                  child: _quickAccsessList(context),
+                ),
+              ],
+            ),
           ),
         ),
       ),
+      bottomNavigationBar: NavigationBar(
+        backgroundColor: Colors.white,
+        destinations: const [
+          NavigationDestination(
+            icon: Icon(Icons.home, size: 36),
+            label: "Anasayfa",
+          ),
+          NavigationDestination(
+            icon: Icon(Icons.file_open, size: 36),
+            label: "Dosya Aç",
+          ),
+          NavigationDestination(
+            icon: Icon(Icons.star, size: 36),
+            label: "Favoriler",
+          ),
+          NavigationDestination(
+            icon: Icon(Icons.person, size: 36),
+            label: "Profil",
+          ),
+        ],
+        selectedIndex: selectedIndex,
+        onDestinationSelected: (value) {
+          setState(() {
+            selectedIndex = value;
+          });
+        },
+      ),
+      floatingActionButton: FloatingActionButton(onPressed: () {}, child: Icon(Icons.add)),
+      floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,
     );
   }
 
@@ -52,7 +92,7 @@ class HomePage extends StatelessWidget {
     );
   }
 
-  Stack _AvaibleSpace(BuildContext context) {
+  Widget _AvaibleSpace(BuildContext context) {
     return Stack(
       children: [
         Positioned(
@@ -74,35 +114,32 @@ class HomePage extends StatelessWidget {
         ),
         Row(
           children: [
-            Positioned(
-              left: 0,
-              child: Container(
-                width: MediaQuery.of(context).size.width * 0.4,
-                height: MediaQuery.of(context).size.height * 0.20,
-                decoration: BoxDecoration(borderRadius: BorderRadius.circular(12), color: Color.fromARGB(255, 33, 110, 243)),
-                child: Center(
-                  child: Column(
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    children: [
-                      Text(
-                        "Avaible Space",
-                        style: GoogleFonts.adventPro(fontSize: 24, color: Colors.white, fontWeight: FontWeight.bold),
+            Container(
+              width: MediaQuery.of(context).size.width * 0.4,
+              height: MediaQuery.of(context).size.height * 0.20,
+              decoration: BoxDecoration(borderRadius: BorderRadius.circular(12), color: Color.fromARGB(255, 33, 110, 243)),
+              child: Center(
+                child: Column(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    Text(
+                      "Avaible Space",
+                      style: GoogleFonts.adventPro(fontSize: 24, color: Colors.white, fontWeight: FontWeight.bold),
+                    ),
+                    Padding(
+                      padding: const EdgeInsets.symmetric(vertical: 10),
+                      child: Text(
+                        "84 GB / 128 GB",
+                        style: GoogleFonts.adventPro(fontSize: 18, color: Colors.white),
                       ),
-                      Padding(
-                        padding: const EdgeInsets.symmetric(vertical: 10),
-                        child: Text(
-                          "84 GB / 128 GB",
-                          style: GoogleFonts.adventPro(fontSize: 18, color: Colors.white),
-                        ),
-                      ),
-                      ElevatedButton(
-                        onPressed: () {},
-                        child: Text("See All"),
-                        style: ElevatedButton.styleFrom(primary: Color.fromARGB(255, 65, 209, 246)),
-                      ),
-                    ],
-                  ),
+                    ),
+                    ElevatedButton(
+                      onPressed: () {},
+                      child: Text("See All"),
+                      style: ElevatedButton.styleFrom(primary: Color.fromARGB(255, 65, 209, 246)),
+                    ),
+                  ],
                 ),
               ),
             ),
