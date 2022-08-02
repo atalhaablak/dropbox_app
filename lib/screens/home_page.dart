@@ -4,6 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:pie_chart/pie_chart.dart';
 import '../products/category_listview.dart';
+import '../products/widgets/inter_head_button.dart';
 
 class HomePage extends StatefulWidget {
   HomePage({Key? key}) : super(key: key);
@@ -45,35 +46,39 @@ class _HomePageState extends State<HomePage> {
           ),
         ),
       ),
-      bottomNavigationBar: NavigationBar(
-        backgroundColor: Colors.white,
-        destinations: const [
-          NavigationDestination(
-            icon: Icon(Icons.home, size: 36),
-            label: "Anasayfa",
-          ),
-          NavigationDestination(
-            icon: Icon(Icons.file_open, size: 36),
-            label: "Dosya Aç",
-          ),
-          NavigationDestination(
-            icon: Icon(Icons.star, size: 36),
-            label: "Favoriler",
-          ),
-          NavigationDestination(
-            icon: Icon(Icons.person, size: 36),
-            label: "Profil",
-          ),
-        ],
-        selectedIndex: selectedIndex,
-        onDestinationSelected: (value) {
-          setState(() {
-            selectedIndex = value;
-          });
-        },
-      ),
+      bottomNavigationBar: _designNavBar(),
       floatingActionButton: FloatingActionButton(onPressed: () {}, child: Icon(Icons.add)),
       floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,
+    );
+  }
+
+  NavigationBar _designNavBar() {
+    return NavigationBar(
+      backgroundColor: Colors.white,
+      destinations: const [
+        NavigationDestination(
+          icon: Icon(Icons.home, size: 36),
+          label: "Anasayfa",
+        ),
+        NavigationDestination(
+          icon: Icon(Icons.file_open, size: 36),
+          label: "Dosya Aç",
+        ),
+        NavigationDestination(
+          icon: Icon(Icons.star, size: 36),
+          label: "Favoriler",
+        ),
+        NavigationDestination(
+          icon: Icon(Icons.person, size: 36),
+          label: "Profil",
+        ),
+      ],
+      selectedIndex: selectedIndex,
+      onDestinationSelected: (value) {
+        setState(() {
+          selectedIndex = value;
+        });
+      },
     );
   }
 
@@ -221,33 +226,6 @@ class _HomePageAppBar extends StatelessWidget {
             ),
           ),
         ),
-      ],
-    );
-  }
-}
-
-class InterHeadButton extends StatelessWidget {
-  final String text;
-  final Function onPressed;
-  const InterHeadButton({
-    Key? key,
-    required this.text,
-    required this.onPressed,
-  }) : super(key: key);
-
-  @override
-  Widget build(BuildContext context) {
-    return Row(
-      mainAxisAlignment: MainAxisAlignment.spaceBetween,
-      children: [
-        Text(
-          text,
-          style: GoogleFonts.adventPro(
-            fontSize: 24,
-            fontWeight: FontWeight.bold,
-          ),
-        ),
-        IconButton(onPressed: onPressed(), icon: Icon(Icons.more_horiz, color: Color.fromARGB(255, 164, 158, 158))),
       ],
     );
   }
