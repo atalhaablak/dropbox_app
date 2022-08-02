@@ -58,19 +58,19 @@ class _HomePageState extends State<HomePage> {
       destinations: const [
         NavigationDestination(
           icon: Icon(Icons.home, size: 36),
-          label: "Anasayfa",
+          label: "Home Page",
         ),
         NavigationDestination(
           icon: Icon(Icons.file_open, size: 36),
-          label: "Dosya Aç",
+          label: "Open File",
         ),
         NavigationDestination(
           icon: Icon(Icons.star, size: 36),
-          label: "Favoriler",
+          label: "Favorites",
         ),
         NavigationDestination(
           icon: Icon(Icons.person, size: 36),
-          label: "Profil",
+          label: "Profile",
         ),
       ],
       selectedIndex: selectedIndex,
