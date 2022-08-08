@@ -22,7 +22,7 @@ class InterHeadButton extends StatelessWidget {
             fontWeight: FontWeight.bold,
           ),
         ),
-        IconButton(onPressed: onPressed(), icon: Icon(Icons.more_horiz, color: Color.fromARGB(255, 164, 158, 158))),
+        IconButton(onPressed: onPressed(), icon: const Icon(Icons.more_horiz, color: Color.fromARGB(255, 164, 158, 158))),
       ],
     );
   }

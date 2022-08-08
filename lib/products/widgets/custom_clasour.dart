@@ -20,7 +20,7 @@ class CustomClasour extends StatelessWidget {
       children: [
         CustomRoundedBox(color: color, icon: icon, size: size),
         Padding(
-          padding: EdgeInsets.only(top: 8.0),
+          padding: const EdgeInsets.only(top: 8.0),
           child: label!.isNotEmpty
               ? Text(
                   label!,

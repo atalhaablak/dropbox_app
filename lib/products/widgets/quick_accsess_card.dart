@@ -26,12 +26,13 @@ class QuicAccsessCard extends StatelessWidget {
                 children: [
                   Row(
                     children: [
-                      CustomClasour(icon: Icons.play_circle, label: "", color: Color.fromARGB(255, 130, 189, 238), size: 35),
+                      const CustomClasour(
+                          icon: Icons.play_circle, label: "", color: Color.fromARGB(255, 130, 189, 238), size: 35),
                       Padding(
                         padding: const EdgeInsets.only(left: 8, bottom: 8),
                         child: Column(
                           crossAxisAlignment: CrossAxisAlignment.start,
-                          children: [
+                          children: const [
                             Text("Video Cards"),
                             SizedBox(height: 5),
                             Text("41 MB"),
@@ -40,7 +41,7 @@ class QuicAccsessCard extends StatelessWidget {
                       ),
                     ],
                   ),
-                  IconButton(onPressed: () {}, icon: Icon(Icons.chevron_right)),
+                  IconButton(onPressed: () {}, icon: const Icon(Icons.chevron_right)),
                 ],
               ),
             ),
@@ -65,12 +66,12 @@ class QuicAccsessCard extends StatelessWidget {
                 children: [
                   Row(
                     children: [
-                      CustomClasour(icon: Icons.file_open, label: "", color: Color.fromARGB(255, 130, 189, 238), size: 35),
+                      const CustomClasour(icon: Icons.file_open, label: "", color: Color.fromARGB(255, 130, 189, 238), size: 35),
                       Padding(
                         padding: const EdgeInsets.only(left: 8, bottom: 8),
                         child: Column(
                           crossAxisAlignment: CrossAxisAlignment.start,
-                          children: [
+                          children: const [
                             Text("File Cards"),
                             SizedBox(height: 5),
                             Text("50 MB"),
@@ -79,7 +80,7 @@ class QuicAccsessCard extends StatelessWidget {
                       ),
                     ],
                   ),
-                  IconButton(onPressed: () {}, icon: Icon(Icons.chevron_right)),
+                  IconButton(onPressed: () {}, icon: const Icon(Icons.chevron_right)),
                 ],
               ),
             ),
@@ -104,13 +105,13 @@ class QuicAccsessCard extends StatelessWidget {
                 children: [
                   Row(
                     children: [
-                      CustomClasour(
+                      const CustomClasour(
                           icon: Icons.camera_alt_outlined, label: "", color: Color.fromARGB(255, 130, 189, 238), size: 35),
                       Padding(
                         padding: const EdgeInsets.only(left: 8, bottom: 8),
                         child: Column(
                           crossAxisAlignment: CrossAxisAlignment.start,
-                          children: [
+                          children: const [
                             Text("Picture Cards"),
                             SizedBox(height: 5),
                             Text("30 MB"),
@@ -129,7 +130,7 @@ class QuicAccsessCard extends StatelessWidget {
     } else {
       return Container(
         color: Colors.red,
-        child: Icon(Icons.error_outline),
+        child: const Icon(Icons.error_outline),
       );
     }
   }

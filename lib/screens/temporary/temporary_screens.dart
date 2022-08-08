@@ -5,7 +5,7 @@ class FilePage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(appBar: AppBar(title: Text("File Page")));
+    return Scaffold(appBar: AppBar(title: const Text("File Page")));
   }
 }
 
@@ -14,7 +14,7 @@ class StarPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(appBar: AppBar(title: Text("Star Page")));
+    return Scaffold(appBar: AppBar(title: const Text("Star Page")));
   }
 }
 
@@ -23,6 +23,6 @@ class ProfilePage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(appBar: AppBar(title: Text("Profile Page")));
+    return Scaffold(appBar: AppBar(title: const Text("Profile Page")));
   }
 }

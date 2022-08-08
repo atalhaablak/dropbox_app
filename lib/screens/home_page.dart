@@ -7,7 +7,7 @@ import '../products/category_listview.dart';
 import '../products/widgets/inter_head_button.dart';
 
 class HomePage extends StatefulWidget {
-  HomePage({Key? key}) : super(key: key);
+  const HomePage({Key? key}) : super(key: key);
 
   @override
   State<HomePage> createState() => _HomePageState();
@@ -16,25 +16,25 @@ class HomePage extends StatefulWidget {
 class _HomePageState extends State<HomePage> {
   int selectedIndex = 0;
 
-  List pages = [HomePage(), FilePage(), StarPage(), ProfilePage()];
+  List pages = [const HomePage(), const FilePage(), const StarPage(), const ProfilePage()];
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Color.fromARGB(255, 247, 239, 239),
+      backgroundColor: const Color.fromARGB(255, 247, 239, 239),
       body: SafeArea(
         child: Padding(
           padding: const EdgeInsets.symmetric(horizontal: 20),
           child: SingleChildScrollView(
-            physics: NeverScrollableScrollPhysics(),
+            physics: const NeverScrollableScrollPhysics(),
             child: Column(
               children: [
                 const _HomePageAppBar(name: "Ahmet Talha Ablak"),
-                SizedBox(height: 40),
+                const SizedBox(height: 40),
                 _AvaibleSpace(context),
-                SizedBox(height: 30),
+                const SizedBox(height: 30),
                 InterHeadButton(text: "Category", onPressed: () {}),
-                SizedBox(height: 10),
+                const SizedBox(height: 10),
                 _categoryList(context),
                 InterHeadButton(text: "Quick Accsess", onPressed: () {}),
                 Padding(
@@ -47,7 +47,7 @@ class _HomePageState extends State<HomePage> {
         ),
       ),
       bottomNavigationBar: _designNavBar(),
-      floatingActionButton: FloatingActionButton(onPressed: () {}, child: Icon(Icons.add)),
+      floatingActionButton: FloatingActionButton(onPressed: () {}, child: const Icon(Icons.add)),
       floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,
     );
   }

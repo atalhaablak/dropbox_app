@@ -1,14 +1,16 @@
-import 'package:dropbox_app/products/widgets/custom_clasour.dart';
 import 'package:dropbox_app/products/widgets/quick_accsess_card.dart';
 import 'package:flutter/material.dart';
 
-import '../screens/home_page.dart';
-
-class QuickAccsessListViewBuilder extends StatelessWidget {
-  QuickAccsessListViewBuilder({
+class QuickAccsessListViewBuilder extends StatefulWidget {
+  const QuickAccsessListViewBuilder({
     Key? key,
   }) : super(key: key);
 
+  @override
+  State<QuickAccsessListViewBuilder> createState() => _QuickAccsessListViewBuilderState();
+}
+
+class _QuickAccsessListViewBuilderState extends State<QuickAccsessListViewBuilder> {
   @override
   Widget build(BuildContext context) {
     return ListView.builder(

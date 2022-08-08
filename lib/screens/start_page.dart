@@ -1,10 +1,5 @@
-import 'dart:ui';
-
 import 'package:flutter/material.dart';
-import 'package:flutter/src/foundation/key.dart';
-import 'package:flutter/src/widgets/framework.dart';
 import 'package:google_fonts/google_fonts.dart';
-
 import 'home_page.dart';
 
 class StartPage extends StatelessWidget {
@@ -13,7 +8,7 @@ class StartPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      decoration: BoxDecoration(
+      decoration: const BoxDecoration(
         gradient: LinearGradient(
             begin: Alignment.topLeft,
             end: Alignment.bottomRight,
@@ -51,11 +46,11 @@ class StartPage extends StatelessWidget {
                 // Get Started
                 ElevatedButton(
                   onPressed: () {
-                    Navigator.push(context, MaterialPageRoute(builder: ((context) => HomePage())));
+                    Navigator.push(context, MaterialPageRoute(builder: ((context) => const HomePage())));
                   },
                   child: Text("Get Started"),
                   style: ElevatedButton.styleFrom(
-                    primary: Color.fromARGB(255, 108, 179, 237),
+                    primary: const Color.fromARGB(255, 108, 179, 237),
                     minimumSize: Size(MediaQuery.of(context).size.width * 0.6, 60),
                     shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(30)),
                   ),
