@@ -1,16 +1,9 @@
-# dropbox_app
+# DroppBox App
 
-A new Flutter project.
+UpLabs sitesinden bakarak uyarladığım, sadece ana ekrandan oluşan tasarım odaklı bir uygulamadır.
 
-## Getting Started
+## Kazanımlarım:
+- Singleton
+- Clean Code
+- Klasörleme yapısının anlaşılabilir ve proje mantığına uygun şekilde oluşturulması
 
-This project is a starting point for a Flutter application.
-
-A few resources to get you started if this is your first Flutter project:
-
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
-
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
